@@ -6,11 +6,11 @@ const claimController = new ClaimController;
 const validatetoken = new ValidateToken;
 const router =  Router();
 
-router.post("/claim", validatetoken.Token, claimController.addClaim);
-router.get("/claims", validatetoken.Token, claimController.getClaim);
-router.get("/claim/:idclaims", validatetoken.Token, claimController.getOneClaim);
-router.put("/claim/:idclaims", validatetoken.Token, claimController.updateClaim);
-router.delete("/claim/:idclaims", validatetoken.Token, claimController.deleteClaim);
+router.post("/claim", claimController.addClaim);
+router.get("/claims", claimController.getClaim);
+router.get("/claim/:idclaims", claimController.getOneClaim);
+router.put("/claim/:idclaims", claimController.updateClaim);
+router.delete("/claim/:idclaims", claimController.deleteClaim);
 
 export default router;
 

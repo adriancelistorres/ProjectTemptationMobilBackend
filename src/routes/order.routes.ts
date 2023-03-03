@@ -8,10 +8,10 @@ const orderController = new OrderController();
 
 const router =  Router();
 
-router.post("/order", validatetoken.Token, orderController.addOrder);
-router.get("/orders", validatetoken.Token, orderController.getOrder);
-router.get("/order/:idorder", validatetoken.Token, orderController.getOneOrder);
-router.put("/order/:idorder", validatetoken.Token, orderController.updateOrder);
-router.delete("/order/:idorder", validatetoken.Token, orderController.deleteOrder);
+router.post("/order", orderController.addOrder);
+router.get("/orders", orderController.getOrder);
+router.get("/order/:idorder", orderController.getOneOrder);
+router.put("/order/:idorder", orderController.updateOrder);
+router.delete("/order/:idorder", orderController.deleteOrder);
 
 export default router;

@@ -8,10 +8,10 @@ const validatetoken =  new ValidateToken;
 
 const router = Router();
 
-router.post("/style",validatetoken.Token,stylescontroller.addStyles);
-router.get("/styles",validatetoken.Token,stylescontroller.getStyles);
-router.get("/style/:idstyles",validatetoken.Token,stylescontroller.getOneStyle);
-router.put("/style/:idstyles",validatetoken.Token,stylescontroller.updateStyle);
-router.delete("/style/:idstyles",validatetoken.Token,stylescontroller.deleteStyle);
+router.post("/style",stylescontroller.addStyles);
+router.get("/styles",stylescontroller.getStyles);
+router.get("/style/:idstyles",stylescontroller.getOneStyle);
+router.put("/style/:idstyles",stylescontroller.updateStyle);
+router.delete("/style/:idstyles",stylescontroller.deleteStyle);
 
 export default router

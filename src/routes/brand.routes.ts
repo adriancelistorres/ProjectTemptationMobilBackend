@@ -8,10 +8,10 @@ const validatetoken =  new ValidateToken;
 
 const router =  Router();
 
-router.post("/brand",validatetoken.Token,brandcontroller.addBrand);
-router.get("/brands",validatetoken.Token,brandcontroller.getBrand);
-router.get("/brand/:idbrand",validatetoken.Token,brandcontroller.getOneBrand);
-router.put("/brand/:idbrand",validatetoken.Token,brandcontroller.UpdateBrand);
-router.delete("/brand/:idbrand",validatetoken.Token,brandcontroller.deleteBrand);
+router.post("/brand",brandcontroller.addBrand);
+router.get("/brands",brandcontroller.getBrand);
+router.get("/brand/:idbrand",brandcontroller.getOneBrand);
+router.put("/brand/:idbrand",brandcontroller.UpdateBrand);
+router.delete("/brand/:idbrand",brandcontroller.deleteBrand);
 
 export default router;

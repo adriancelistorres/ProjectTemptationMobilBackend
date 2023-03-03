@@ -8,10 +8,10 @@ const colorcontroller = new ColorController();
 
 const router = Router();
 
-router.post("/color",validatetoken.Token,colorcontroller.addColor);
-router.get("/colors",validatetoken.Token,colorcontroller.getColor);
-router.get("/color/:idcolor",validatetoken.Token,colorcontroller.getOneColor);
-router.put("/color/:idcolor",validatetoken.Token,colorcontroller.updateColor);
-router.delete("/color/:idcolor",validatetoken.Token,colorcontroller.deleteColor);
+router.post("/color",colorcontroller.addColor);
+router.get("/colors",colorcontroller.getColor);
+router.get("/color/:idcolor",colorcontroller.getOneColor);
+router.put("/color/:idcolor",colorcontroller.updateColor);
+router.delete("/color/:idcolor",colorcontroller.deleteColor);
 
 export default router;

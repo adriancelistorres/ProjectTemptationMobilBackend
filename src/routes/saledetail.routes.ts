@@ -7,10 +7,10 @@ const validatetoken = new ValidateToken;
 
 const router =  Router();
 
-router.post("/saledetail", validatetoken.Token, salecontroller.addSaleDatail);
-router.get("/saledetails", validatetoken.Token, salecontroller.getSaleDetail);
-router.get("/saledetail/:idsale", validatetoken.Token, salecontroller.getOneSaleDetail);
-router.put("/saledetail/:idsale", validatetoken.Token, salecontroller.updateSaleDetail);
-router.delete("/saledetail/:idsale", validatetoken.Token, salecontroller.deleteSaleDetail);
+router.post("/saledetail",salecontroller.addSaleDatail);
+router.get("/saledetails",salecontroller.getSaleDetail);
+router.get("/saledetail/:idsale", salecontroller.getOneSaleDetail);
+router.put("/saledetail/:idsale",  salecontroller.updateSaleDetail);
+router.delete("/saledetail/:idsale",  salecontroller.deleteSaleDetail);
 
 export default router;

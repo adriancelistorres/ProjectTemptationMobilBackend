@@ -9,10 +9,10 @@ const validatetoken =  new ValidateToken;
 
 const router = Router();
 
-router.post("/size",validatetoken.Token,sizecontroller.addSize);
-router.get("/sizes",validatetoken.Token,sizecontroller.getSize);
-router.get("/size/:idsize",validatetoken.Token,sizecontroller.getOneSize);
-router.put("/size/:idsize",validatetoken.Token,sizecontroller.UpdateSize);
-router.delete("/size/:idsize",validatetoken.Token,sizecontroller.deleteSize);
+router.post("/size",sizecontroller.addSize);
+router.get("/sizes",sizecontroller.getSize);
+router.get("/size/:idsize",sizecontroller.getOneSize);
+router.put("/size/:idsize",sizecontroller.UpdateSize);
+router.delete("/size/:idsize",sizecontroller.deleteSize);
 
 export default router;

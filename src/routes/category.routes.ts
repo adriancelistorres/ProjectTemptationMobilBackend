@@ -7,10 +7,10 @@ import ValidateToken from "../controllers/validate-token.controller";
 
  const router =  Router();
 
- router.post("/category", validatetoken.Token,categorycontroller.addCategory);
- router.get("/categorys",validatetoken.Token, categorycontroller.getCategory);
- router.get("/category/:idcat",validatetoken.Token, categorycontroller.getOneCategory);
- router.put("/category/:idcat",validatetoken.Token, categorycontroller.updateCatgory);
- router.delete("/category/:idcat",validatetoken.Token, categorycontroller.deleteCategory);
+ router.post("/category",categorycontroller.addCategory);
+ router.get("/categorys", categorycontroller.getCategory);
+ router.get("/category/:idcat", categorycontroller.getOneCategory);
+ router.put("/category/:idcat", categorycontroller.updateCatgory);
+ router.delete("/category/:idcat", categorycontroller.deleteCategory);
 
  export default router;
