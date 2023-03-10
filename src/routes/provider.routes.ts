@@ -15,8 +15,8 @@ router.get("/provider/:idprovider",providerController.getOneProvider);
 router.put("/provider/:idprovider",providerController.UpdateProvider);
 router.delete("/provider/:idprovider",providerController.deleteProvider);
 */
-router.post("/addprovider",validatetoken.Token,providerController.addProvider);
-router.get("/providers",validatetoken.Token,providerController.getProvider);
+router.post("/addprovider",providerController.addProvider);
+router.get("/providers",providerController.getProvider);
 router.get("/provider/:idprovider",providerController.getOneProvider);
 router.put("/provider/:idprovider",providerController.UpdateProvider);
 router.delete("/provider/:idprovider",providerController.deleteProvider);
