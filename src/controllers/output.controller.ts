@@ -41,9 +41,9 @@ class OutputController{
 
     public async getOneOutput(req:Request, res:Response){
         try{
-            const idinput: number = parseInt(req.params.idinput);
+            const idout: number = parseInt(req.params.idout);
             const service = new OutputService();
-            const result = await service.getServiceOneOutput(idinput);
+            const result = await service.getServiceOneOutput(idout);
             return res.json(result);
         }catch(error){
             if (error instanceof Error) {
@@ -57,10 +57,10 @@ class OutputController{
 
     public async updateOutput(req: Request, res:Response){
         try {
-            const idinput: number = parseInt(req.params.idinput);
+            const idout: number = parseInt(req.params.idout);
             const reqBody: IOutput = req.body;
             const service = new OutputService();
-            const result = await service.updateServiceOutput(idinput,reqBody);
+            const result = await service.updateServiceOutput(idout,reqBody);
             return res.json(result);
         } catch (error) {
             if (error instanceof Error) {

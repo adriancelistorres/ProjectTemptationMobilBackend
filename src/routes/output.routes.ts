@@ -9,8 +9,8 @@ const router = Router();
 
 router.post("/output",inputcontroller.addOutput);
 router.get("/outputs",inputcontroller.getOutput);
-router.get("/output/:idoutput",inputcontroller.getOneOutput);
-router.put("/output/:idoutput",inputcontroller.updateOutput);
+router.get("/output/:idout",inputcontroller.getOneOutput);
+router.put("/output/:idout",inputcontroller.updateOutput);
 /*
 router.post("/output",validatetoken.Token,inputcontroller.addInput);
 router.get("/outputs",validatetoken.Token,inputcontroller.getInput);

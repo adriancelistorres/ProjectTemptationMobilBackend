@@ -9,9 +9,15 @@ import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
   idproduc: number;
 
   @Column()
-  stock: number;
+  quantity: number;
 
   @Column()
-  dateout: Date;
+  dateout: string;
+
+  @Column()
+  destino: string;
+
+  @Column()
+  state: number;
  }
  export default Output;
