@@ -33,13 +33,13 @@ import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
   stock: number;
 
   @Column()
-  image_front: number;
+  image_front: string;
 
   @Column()
-  image_back: number;
+  image_back: string;
 
   @Column()
-  image_using: number;
+  image_using: string;
 
   @Column()
   state: number;
