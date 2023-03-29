@@ -4,10 +4,10 @@ import{BaseEntity, Column, Entity, PrimaryGeneratedColumn} from "typeorm";
 class DetailIncome extends BaseEntity{
 
   @PrimaryGeneratedColumn()
-  idincome: number;
+  iddetincome: number;
 
   @Column()
-  idicome: number;
+  idincome: number;
 
   @Column()
   idproduc: number;

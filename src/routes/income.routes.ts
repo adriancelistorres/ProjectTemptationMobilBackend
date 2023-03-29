@@ -7,8 +7,8 @@ const router =  Router();
 
 router.post("/income",income.addIncome);
 router.get("/incomes",income.getIncome);
-router.get("/income/:idicome",income.getOneIncome);
-router.put("/income/:idicome",income.UpdateIncome);
-router.delete("/income/:idicome",income.deleteIncome);
+router.get("/income/:idincome",income.getOneIncome);
+router.put("/income/:idincome",income.UpdateIncome);
+router.delete("/income/:idincome",income.deleteIncome);
 
 export default router;

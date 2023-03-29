@@ -5,7 +5,7 @@ class DetailIncomeService{
 
     public async addServiceDetailIncome(reqBody: IDetailIncome){
         const detailincome =  new DetailIncome();
-        detailincome.idicome =  reqBody.idicome;
+        detailincome.idincome =  reqBody.idincome;
         detailincome.idproduc=reqBody.idproduc;
         detailincome.price_buy=reqBody.price_buy;
         detailincome.quantity=reqBody.quantity;
@@ -17,17 +17,17 @@ class DetailIncomeService{
         let respuesta: IDetailIncome[] = ([] =[]);
         const income =  await DetailIncome.find();
         income.map((b) =>{
-            let obj: IDetailIncome = {idincome: b.idincome, idicome: b.idicome, idproduc: b.idproduc, price_buy:b.price_buy,quantity:b.quantity,igv:b.igv };
+            let obj: IDetailIncome = {iddetincome: b.iddetincome, idincome: b.idincome, idproduc: b.idproduc, price_buy:b.price_buy,quantity:b.quantity,igv:b.igv };
             respuesta.push(obj);
         })
         return respuesta;
     }
 
-    public async getServiceOneDetailIncome(idincome: number){
-        const detailincome =  await DetailIncome.findOneBy({idincome: idincome});
+    public async getServiceOneDetailIncome(iddetincome: number){
+        const detailincome =  await DetailIncome.findOneBy({iddetincome: iddetincome});
         let respuesta: IDetailIncome ={
+            iddetincome: detailincome?.iddetincome,
             idincome: detailincome?.idincome,
-            idicome: detailincome?.idicome,
             idproduc: detailincome?.idproduc,
             price_buy: detailincome?.price_buy,
             quantity: detailincome?.quantity,
@@ -41,7 +41,7 @@ class DetailIncomeService{
 
         if(!detailincome) return Promise.reject("No existe Detalle Ingreso");
 
-        detailincome.idicome=reqBody.idicome;
+        detailincome.idincome=reqBody.idincome;
         detailincome.idproduc=reqBody.idproduc;
         detailincome.price_buy = reqBody.price_buy;
         detailincome.quantity = reqBody.quantity;

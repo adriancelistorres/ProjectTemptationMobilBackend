@@ -33,9 +33,9 @@ class IncomeController{
 
     public async getOneIncome(req: Request, res: Response){
         try {
-            let idicome: number = parseInt(req.params.idicome)
+            let idincome: number = parseInt(req.params.idincome)
             const service =  new IncomeService();
-            const result =  await service.getServiceOneIncome(idicome);
+            const result =  await service.getServiceOneIncome(idincome);
             return res.json(result);
 
         } catch (error) {
@@ -48,10 +48,10 @@ class IncomeController{
 
     public async UpdateIncome(req: Request, res: Response){
         try {
-            const idicome: number =  parseInt(req.params.idicome);
+            const idincome: number =  parseInt(req.params.idincome);
             const resBody:IIncome = req.body;
             const service = new IncomeService();
-            const result = await service.UpdateServiceIncome(idicome,resBody);
+            const result = await service.UpdateServiceIncome(idincome,resBody);
             return res.json(result)
         } catch (error) {
             if(error instanceof Error){
@@ -63,9 +63,9 @@ class IncomeController{
 
     public async deleteIncome(req: Request, res: Response){
         try {
-            const idicome: number =  parseInt(req.params.idicome);
+            const idincome: number =  parseInt(req.params.idincome);
             const service =  new IncomeService();
-            const result =  await service.deleteServiceIncome(idicome);
+            const result =  await service.deleteServiceIncome(idincome);
             return res.json(result);
         } catch (error) {
             if(error instanceof Error){

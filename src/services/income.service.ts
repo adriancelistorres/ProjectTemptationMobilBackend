@@ -5,7 +5,7 @@ class IncomeService{
 
     public async addServiceIncome(reqBody: IIncome){
         const income =  new Income();
-        income.idicome = reqBody.idicome;
+        income.idincome = reqBody.idincome;
         income.idprovider =  reqBody.idprovider;
         income.dateinco=reqBody.dateinco;
         income.state=reqBody.state;
@@ -16,16 +16,16 @@ class IncomeService{
         let respuesta: IIncome[] = ([] =[]);
         const income =  await Income.find();
         income.map((b) =>{
-            let obj: IIncome = {idicome: b.idicome, idprovider: b.idprovider, dateinco: b.dateinco, state:b.state };
+            let obj: IIncome = {idincome: b.idincome, idprovider: b.idprovider, dateinco: b.dateinco, state:b.state };
             respuesta.push(obj);
         })
         return respuesta;
     }
 
-    public async getServiceOneIncome(idicome: number){
-        const income =  await Income.findOneBy({idicome: idicome});
+    public async getServiceOneIncome(idincome: number){
+        const income =  await Income.findOneBy({idincome: idincome});
         let respuesta: IIncome ={
-            idicome: income?.idicome,
+            idincome: income?.idincome,
             idprovider: income?.idprovider,
             dateinco: income?.dateinco,
             state: income?.state,
@@ -33,12 +33,12 @@ class IncomeService{
         return respuesta;
     }
 
-    public async UpdateServiceIncome(idicome:number, reqBody:IIncome){
-        const income = await Income.findOneBy({idicome:idicome});
+    public async UpdateServiceIncome(idincome:number, reqBody:IIncome){
+        const income = await Income.findOneBy({idincome:idincome});
 
         if(!income) return Promise.reject("No existe Ingreso");
 
-        income.idicome = reqBody.idicome;
+        income.idincome = reqBody.idincome;
         income.idprovider=reqBody.idprovider;
         income.dateinco=reqBody.dateinco;
         income.state = reqBody.state;
@@ -46,8 +46,8 @@ class IncomeService{
         return income;
     }
 
-    public async deleteServiceIncome(idicome: number){
-        const income = await Income.findOneBy({idicome: idicome});
+    public async deleteServiceIncome(idincome: number){
+        const income = await Income.findOneBy({idincome: idincome});
         if(!income){
             return Promise.reject("No existe Ingreso")
         }else{

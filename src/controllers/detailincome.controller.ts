@@ -34,9 +34,9 @@ class DetailIncomeController{
 
     public async getOneDetailIncome(req: Request, res: Response){
         try {
-            let idincome: number = parseInt(req.params.idincome)
+            let iddetincome: number = parseInt(req.params.iddetincome)
             const service =  new DetailIncomeService();
-            const result =  await service.getServiceOneDetailIncome(idincome);
+            const result =  await service.getServiceOneDetailIncome(iddetincome);
             return res.json(result);
 
         } catch (error) {
@@ -49,10 +49,10 @@ class DetailIncomeController{
 
     public async updateDetailIncome(req: Request, res: Response){
         try {
-            const idincome: number =  parseInt(req.params.idincome);
+            const iddetincome: number =  parseInt(req.params.iddetincome);
             const resBody:IDetailIncome = req.body;
             const service = new DetailIncomeService();
-            const result = await service.updateServiceDetailIncome(idincome,resBody);
+            const result = await service.updateServiceDetailIncome(iddetincome,resBody);
             return res.json(result)
         } catch (error) {
             if(error instanceof Error){
