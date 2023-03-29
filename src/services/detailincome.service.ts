@@ -36,8 +36,8 @@ class DetailIncomeService{
         return respuesta;
     }
 
-    public async updateServiceDetailIncome(idincome:number, reqBody:IDetailIncome){
-        const detailincome = await DetailIncome.findOneBy({idincome:idincome});
+    public async updateServiceDetailIncome(iddetincome:number, reqBody:IDetailIncome){
+        const detailincome = await DetailIncome.findOneBy({iddetincome:iddetincome});
 
         if(!detailincome) return Promise.reject("No existe Detalle Ingreso");
 
