@@ -59,18 +59,16 @@ class OutputService{
        }
         
     }
-
-    /*Metodo para Eliminar un provevedor 
-    public async deleteServicePaymentMethod(idout: number){
-       const out = await Output.findOneBy({idout: idout});
-       if(!out){
-           return Promise.reject("No existe Salidas de Productos")
-       }else{
-        out.state = 0;
-        out.save();
-           return out;
-       }
-    }*/
+    public async deleteServiceOutput(idout: number){
+        const out = await Output.findOneBy({idout: idout});
+        if(!out){
+            return Promise.reject("No existe Salidas de Productos")
+        }else{
+         out.state = 0;
+         out.save();
+            return out;
+        }
+    }
 
 }
 

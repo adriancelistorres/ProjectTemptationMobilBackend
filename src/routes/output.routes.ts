@@ -11,6 +11,7 @@ router.post("/output",inputcontroller.addOutput);
 router.get("/outputs",inputcontroller.getOutput);
 router.get("/output/:idout",inputcontroller.getOneOutput);
 router.put("/output/:idout",inputcontroller.updateOutput);
+router.delete("/output/:idout",inputcontroller.deleteOutput);
 /*
 router.post("/output",validatetoken.Token,inputcontroller.addInput);
 router.get("/outputs",validatetoken.Token,inputcontroller.getInput);
